@@ -1,0 +1,12 @@
+<mvc:View
+    controllerName="com.bnvh.zgwsample.controller.Empty"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+<Page title="Empty Page">
+
+</Page>		
+			
+
+</mvc:View>

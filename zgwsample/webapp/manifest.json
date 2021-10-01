@@ -1,0 +1,116 @@
+{
+  "_version": "1.32.0",
+  "sap.app": {
+    "id": "com.bnvh.zgwsample",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "ach": "ach",
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0",
+          "localUri": "localService/metadata.xml"
+        }
+      }
+		}
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "sap-icon://task",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+
+  "sap.ui5": {
+    "flexEnabled": false,
+   
+    "dependencies": {
+			"minUI5Version": "1.94.1",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.m": {},
+        "sap.ui.layout": {},
+        "sap.f": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.bnvh.zgwsample.i18n.i18n"
+        }
+      },
+			"": {
+				"dataSource": "mainService",
+				"preload": true
+			}
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "rootView":{
+      "id": "idAppView",
+      "type": "XML",
+      "viewName": "com.bnvh.zgwsample.view.App"
+  },
+  "routing": {
+      "config":{
+          "viewPath": "com.bnvh.zgwsample.view",
+          "viewType": "XML",
+          "controlId": "appCon",
+          "clearControlAggregation": true
+      },
+      "routes": [{
+          "name": "master",
+          "pattern": "",
+          "target": ["MasterT","EmptyT"]
+      },{
+          "name": "detail",
+          "pattern": "Products/{ProductId}",
+          "target": ["MasterT","DetailT"]
+      }],
+      "targets": {
+          "MasterT": {
+              "viewName": "View1",
+              "controlAggregation": "masterPages"
+          },
+          "EmptyT":{
+              "viewName": "Empty",
+              "controlAggregation": "detailPages"
+          },
+          "DetailT":{
+              "viewName": "View2",
+              "controlAggregation": "detailPages"
+          }
+
+      }
+
+  }
+  }
+}

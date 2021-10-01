@@ -1,0 +1,25 @@
+<mvc:View
+  controllerName="com.bnvh.zgwsample.controller.View1"
+  xmlns:mvc="sap.ui.core.mvc"
+  displayBlock="true"
+  xmlns="sap.m"
+>
+    <Page title="{i18n>XTITLE}">
+        <headerContent>
+            <Button icon="sap-icon://action" press="onNext"/>
+        </headerContent>
+		<content>
+		 <SearchField id="idSF" search="onSearch" liveChange="onSearch"></SearchField>
+		 
+        	  <List id="idLST" mode="SingleSelectMaster" growingScrollToLoad="true" growing="true" delete="onDelete" 
+                  selectionChange="onProductSelect" items="{/ProductSet}">
+				  <items >
+                    <ObjectListItem intro="{Name}" title="{ProductID}"
+                                    number="{Price}" numberUnit="{CurrencyCode}"
+                                    icon="sap-icon://product" showMarkers="true" 
+                    ></ObjectListItem>
+					</items>
+			</List>
+			</content>
+    </Page>
+</mvc:View>
