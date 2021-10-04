@@ -7,7 +7,7 @@
 |**Generation Platform**<br>Visual Studio Code|
 |**Floorplan Used**<br>simple|
 |**Service Type**<br>OData Url|
-|**Service URL**<br>http://uk1gcnsd02301.corpnet2.com:8060/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/
+|**Service URL**<br>http://domainname.com:port/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/
 |**Module Name**<br>zgwsample|
 |**Application Title**<br>BNVH|
 |**Namespace**<br>com.bnvh|
