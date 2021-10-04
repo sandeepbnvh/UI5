@@ -10,7 +10,7 @@ server:
       ignoreCertError: false # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
       backend:
       - path: /sap
-        url: http://uk1gcnsd02301.corpnet2.com:8060
+        url: http://domainName:port
       ui5:
         path: 
         - /resources
